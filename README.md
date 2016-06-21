@@ -16,7 +16,7 @@ Additionally you can search any location and get it's weather conditions and for
 - Javascript / JQuery
 - simpleWeather API (utilized to get weather data)
 
-#### Resources utilized
+#### Resources Utilized
 - [Coverr.co](http://www.coverr.co) - Looped background videos
 - [Erik Flowers Weather Icons](https://erikflowers.github.io/weather-icons/) - Weather condition icons
 
