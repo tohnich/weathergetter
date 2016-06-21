@@ -16,6 +16,10 @@ Additionally you can search any location and get it's weather conditions and for
 - Javascript / JQuery
 - simpleWeather API (utilized to get weather data)
 
+#### Resources utilized
+- [Coverr.co](http://www.coverr.co) - Looped background videos
+- [Erik Flowers Weather Icons](https://erikflowers.github.io/weather-icons/) - Weather condition icons
+
 #### Reason for Building
 WeatherGetter was a personal project to gain more experience and practice working with Flexbox, SASS, responsive design, and Javascript / JQuery.
 I utilized heavy usage of opacity to allow the background video / image to set the overall mood of the page, which changes based off the current condition's outside the location entered.
