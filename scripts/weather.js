@@ -272,7 +272,7 @@ function displayConditionOverview( conditionOverview ) {
 
     // Display condition overview data on HTML
     conditionIcon.innerHTML = '<img class="svg" src="images/weathericons/' + conditionOverview["code"] + '.svg" />'
-    temp.innerHTML = conditionOverview["temperature"];
+    temp.innerHTML = conditionOverview["temperature"] + '&deg;';
     condition.innerHTML = conditionOverview["condition"];
 
 }
