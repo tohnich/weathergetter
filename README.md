@@ -3,6 +3,8 @@
 WeatherGetter can utilize your current location and show you a detailed view of your location's current conditions and 7 day forecast.
 Additionally you can search any location and get it's weather conditions and forecast as well.
 
+[View WeatherGetter Live](https://tohnich.github.io/weathergetter/)
+
 #### Features
 - With permission, WeatherGetter will get your current location's coordinates and get the weather for that location. This location will also be stored in a cookie, so you don't have to grant permission on reload.
 - Search for a location's weather by using the location input
