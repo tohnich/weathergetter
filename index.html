@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+    <title>Weather App</title>
+
+    <!-- Meta Data -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0">
+
+    <!-- Font(s) -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/global.css">
+
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>WeatherGetter</h1>
+    </div>
+    <!-- /.header -->
+
+    <div id="loading" class="page-loading">
+        <img class="svg" src="images/load.svg" />
+        <h2>Analyzing Clouds for Weather</h2>
+        <p>This will only take a second...</p>
+    </div>
+
+    <!-- Weather Wrapper -->
+    <div id="content" class="weather-wrapper">
+
+        <!-- weather bg -->
+        <div id="weatherBg" class="weather-bg">
+            <!-- <video loop muted autoplay poster="images/up.jpg" class="weather-bg__video">
+                <source src="videos/up.webm" type="video/webm">
+                <source src="videos/up.mp4" type="video/mp4">
+                <source src="videos/up.ogv" type="video/ogg">
+            </video> -->
+        </div>
+        <!-- ./weather-bg -->
+
+        <!-- Location Container -->
+        <div class="location container">
+
+            <!-- Location Block -->
+            <div class="location-block">
+
+                <!-- Title Block -->
+                <div class="title block">
+                    <h1 class="location section-title">Location</h1>
+                </div>
+                <!-- /.title.block -->
+
+                <!-- Location Input -->
+                <div class="location input">
+                    <form id="locationSearch">
+                        <input id="locationInput" class="location search" type="text" />
+                        <button id="locationSubmit" class="location submit" type="button">GO</button>
+                    </form>
+                </div>
+                <!-- /.location.input -->
+
+            </div>
+            <!-- /.location-block -->
+
+        </div>
+        <!-- /.location.container -->
+
+        <div class="container">
+
+            <div id="weatherLoading" class="weather-loading">
+                <img class="svg" src="images/load.svg" />
+                <h2>Analyzing Clouds for Weather</h2>
+                <p>This will only take a second...</p>
+            </div>
+
+        </div>
+
+        <!-- Weather Container -->
+        <div id="weatherContainer">
+
+            <!-- Current Conditions Container -->
+            <div class="current-conditions container">
+
+                <!-- Current-Conditions-Block -->
+                <div class="current-conditions-block">
+
+                    <!-- Title Block -->
+                    <div class="title block">
+                        <h1 class="current-conditions section-title">Current Conditions</h1>
+                    </div>
+                    <!-- /.title.block -->
+
+                    <!-- Current Conditions Block -->
+                    <div id="currentConditions" class="block">
+
+                        <!-- Weather Forecast -->
+                        <div class="weather-conditions">
+                            <div id="conditionOverview" class="condition overview">
+                                <div id="currentConditionIcon" class="current condition-icon"></div>
+                                <div id="currentTemp" class="current temp"></div>
+                                <div id="currentCondition" class="current condition"></div>
+                            </div>
+                            <div class="condition details">
+                                <ul id="conditionDetails">
+                                    <li>
+                                        <div class="title">Last Updated: </div>
+                                        <div id="currentUpdated" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Low: </div>
+                                        <div id="currentLow" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">High: </div>
+                                        <div id="currentHigh" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Wind Chill: </div>
+                                        <div id="currentWindChill" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Wind Direction: </div>
+                                        <div id="currentWindDirection" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Wind Speed: </div>
+                                        <div id="currentWindSpeed" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Humidity: </div>
+                                        <div id="currentHumidity" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Heat Index: </div>
+                                        <div id="currentHeatIndex" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Pressure: </div>
+                                        <div id="currentPressure" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Visibility: </div>
+                                        <div id="currentVisibility" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Sunrise: </div>
+                                        <div id="currentSunrise" class="value"></div>
+                                    </li>
+                                    <li>
+                                        <div class="title">Sunset: </div>
+                                        <div id="currentSunset" class="value"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.weather-forecast -->
+
+                    </div>
+                    <!-- /#currentConditions .block -->
+
+                </div>
+                <!-- /.current-conditions-block -->
+
+            </div>
+            <!-- /.current-conditions.container -->
+
+            <!-- Forecast Container -->
+            <div class="forecast container">
+
+                <div class="forecast-block">
+
+                    <!-- Title Block -->
+                    <div class="title block">
+                        <h1 class="forecast section-title">Weekly Forecast</h1>
+                    </div>
+                    <!-- /.title.block -->
+
+                    <!-- Forecast Block -->
+                    <div id="forecast" class="block">
+
+                    </div>
+                    <!-- /#forecast .block -->
+
+                </div>
+                <!-- /.forecast-block -->
+
+            </div>
+            <!-- /.forecast.container -->
+
+        </div>
+        <!--/#weatherContainer -->
+
+    </div>
+    <!-- /.weather-wrapper -->
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>Designed and Coded by: Tom Gobich</p>
+        <span>Weather was really collected from Yahoo, not the clouds</span>
+    </div>
+    <!-- /.footer -->
+
+    <!-- JQuery CND -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <!-- JQuery UI CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/i18n/jquery-ui-i18n.min.js"></script>
+
+    <!-- JQuery CND -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
+
+    <!-- Inline SVG -->
+    <script src="scripts/inline-svg.js"></script>
+
+    <!-- Local Weather JS -->
+    <script src="scripts/weather.js"></script>
+
+</body>
+</html>

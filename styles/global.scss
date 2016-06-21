@@ -1,0 +1,700 @@
+
+
+
+/* Variables
+--------------------------------------------------- */
+$color-white: #ecf0f1;
+$color-light: #e1e8ea;
+$color-dark:  #22313f;
+$color-cool:  #6bb9f0;
+$color-hot:   #f2784b;
+
+$color-white-transparent:      rgba(236, 240, 241, 0.8);
+$color-white-very-transparent: rgba(236, 240, 241, 0.6);
+$color-light-transparent:      rgba(225, 232, 234, 0.8);
+$color-dark-transparent:       rgba( 34,  49,  65, 0.8);
+$color-dark-very-transparent:  rgba( 34,  49,  65, 0.6);
+$color-cool-transparent:       rgba(107, 185, 240, 0.8);
+$color-hot-transparent:        rgba(242, 120,  75, 0.8);
+
+
+
+/* Mixin's
+--------------------------------------------------- */
+@mixin display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+
+/* Global Styles
+--------------------------------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  background-color: $color-light;
+  color: $color-dark;
+}
+
+svg path {
+  fill: $color-dark;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .section-title {
+    padding: 15px 0;
+  }
+}
+
+#content {
+    display: none;
+}
+
+
+
+/* Header
+--------------------------------------------------- */
+.header,
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: $color-dark-transparent;
+  color: $color-white;
+  z-index: 100000;
+
+  @include display-flex();
+
+  justify-content: center;
+}
+
+.footer {
+    text-align: center;
+
+    flex-direction: column;
+
+    span {
+        color: $color-light-transparent;
+        font-weight: 400;
+    }
+}
+
+
+
+/* Location Input
+--------------------------------------------------- */
+.location-block {
+    padding: 30px;
+    background-color: $color-dark-very-transparent;
+
+    .location.section-title {
+        color: $color-white;
+        padding-top: 0;
+    }
+
+    .location.input {
+        width: 100%;
+
+        form {
+            width: 100%;
+
+            @include display-flex();
+
+            align-items: stretch;
+
+            .location.search,
+            .location.submit {
+                font-size: 26px;
+            }
+
+            .location.search {
+                width: calc(80% - 20px);
+                background-color: $color-white-transparent;
+                color: $color-dark;
+                padding: 15px;
+                border: none;
+            }
+
+            .location.submit {
+                width: 20%;
+                background-color: $color-dark;
+                color: $color-white;
+                border: none;
+            }
+        }
+    }
+}
+
+
+
+/* Forecast Wrapper
+--------------------------------------------------- */
+.weather-wrapper {
+  width: 100%;
+  padding: 40px 0;
+
+  .block:not(.title) {
+    @include display-flex();
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  /* Background Video */
+  .weather-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+  }
+
+  .weather-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: 767px) {
+    .weather-bg {
+      background: url('http://dev2.slicejack.com/fullscreen-video-demo/img/videoframe.jpg') center center / cover no-repeat;
+    }
+
+    .weather-bg__video {
+      display: none;
+    }
+  }
+}
+
+
+
+/* Current Conditions Section
+--------------------------------------------------- */
+.current-conditions-block,
+.forecast-block {
+  background-color: $color-white-very-transparent;
+  padding: 30px;
+}
+
+.forecast-block {
+    padding-top: 0;
+}
+
+.current-conditions.section-title,
+.forecast.section-title {
+  color: $color-dark;
+  padding-top: 0;
+}
+
+.weather-conditions {
+    width: 100%;
+    border: 9px solid $color-dark-transparent;
+
+    @include display-flex();
+
+    flex-direction: row;
+
+    .condition.overview {
+        width: 50%;
+        background-color: $color-light-transparent;
+        border-right: 9px solid $color-dark-transparent;
+
+        @include display-flex();
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .current.condition-icon {
+            width: 100%;
+            padding-top: 40px;
+
+            @include display-flex();
+
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 50%;
+                height: auto;
+                margin-top: -50px;
+            }
+        }
+
+        .current.temp {
+            font-size: 64px;
+            font-weight: bold;
+            margin-top: -30px;
+        }
+
+        .current.condition {
+            max-width: 350px;
+            font-size: 32px;
+            text-align: center;
+            padding-bottom: 40px;
+        }
+    }
+
+    .condition.details {
+        width: 50%;
+
+        @include display-flex();
+
+        justify-content: flex-start;
+        align-items: center;
+
+        ul {
+            width: 100%;
+            list-style: none;
+
+            li {
+                width: 100%;
+
+                @include display-flex();
+
+                justify-content: space-around;
+                align-items: stretch;
+
+                .title,
+                .value {
+                    width: 50%;
+                    padding: 10px 15px;
+                    margin-bottom: 1px;
+                }
+
+                .title {
+                    text-align: right;
+                    font-weight: bold;
+                    background-color: $color-white;
+                    margin-right: 1px;
+                }
+
+                .value {
+                    text-align: left;
+                    background-color: $color-light;
+                }
+            }
+
+            li:nth-child(odd) {
+                .title {
+                    background-color: $color-white-transparent;
+                }
+
+                .value {
+                    background-color: $color-light-transparent;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+/* Weekly Forecast Section
+--------------------------------------------------- */
+.weather-forecast {
+  width: calc(14.28% - 35px);
+  float: left;
+  border: 9px solid $color-dark-transparent;
+
+  @include display-flex();
+
+  flex-direction: column;
+
+  .forecast.weekday,
+  .forecast.condition,
+  .forecast.condition-icon {
+    @include display-flex();
+
+    justify-content: center;
+  }
+
+  .forecast.weekday {
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0 0 0;
+    border-top: 3px solid $color-white;
+  }
+
+  .forecast.condition {
+    text-align: center;
+    padding-bottom: 10px;
+
+    @include display-flex();
+
+    align-items: stretch;
+  }
+
+  .forecast.heading {
+      background-color: $color-light-transparent;
+  }
+
+  .forecast.weekday,
+  .forecast.condition {
+    border-left: 3px solid $color-white;
+    border-right: 3px solid $color-white;
+  }
+
+  .forecast.condition-icon {
+    padding: 10px 0;
+    background-color: $color-white-transparent;
+    border-left: 3px solid $color-white;
+    border-right: 3px solid $color-white;
+  }
+
+  .temperature {
+    @include display-flex();
+
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    .temp-low,
+    .temp-high {
+      width: 50%;
+      color: $color-white;
+      font-weight: bold;
+      padding: 10px 0;
+
+      @include display-flex();
+
+      justify-content: center;
+    }
+
+    .temp-low {
+      background-color: $color-cool-transparent;
+      border: 3px solid $color-cool;
+      border-top: none;
+      border-right: none;
+    }
+
+    .temp-high {
+      background-color: $color-hot-transparent;
+      border: 3px solid $color-hot;
+      border-top: none;
+      border-left: none;
+    }
+  }
+}
+
+/* Loading Styles */
+.page-loading,
+.weather-loading {
+    width: 100vw;
+    height: calc(100vh - 79px);
+    background-color: $color-dark;
+    color: $color-white;
+    text-align: center;
+    z-index: 1000;
+
+    display:absolute;
+    top: 0;
+    left: 0;
+
+    @include display-flex();
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-loading {
+    width: 100%;
+    height: 250px;
+    background-color: $color-dark-very-transparent;
+}
+
+
+
+/* Resonsive Styles */
+@media( max-width: 1279px ) {
+
+    .location-block .location.input form {
+
+        .location.search {
+            -webkit-width: calc( 75% - 20px );
+            width: calc( 75% - 20px );
+        }
+
+        .location.submit {
+            width: 25%;
+        }
+    }
+
+    .weather-forecast {
+        width: 100%;
+        margin-bottom: 20px;
+
+        flex-direction: row;
+
+        .forecast.heading {
+            width: 60%;
+            border: 3px solid $color-white;
+            border-right: none;
+            border-left: none;
+
+            .forecast.weekday,
+            .forecast.condition {
+                justify-content: flex-start;
+                border: none;
+            }
+
+            .forecast.weekday {
+                font-size: 1.8em;
+                padding: 28px 0 0 40px;
+            }
+
+            .forecast.condition {
+                font-size: 1.4em;
+                padding: 0 0 0 40px;
+            }
+        }
+
+        .forecast.condition-icon {
+            -webkit-width: calc( 20% - 30px );
+            width: calc( 20% - 3px );
+            border: 3px solid $color-white;
+            border-right: none;
+
+            order: -1;
+        }
+
+        .temperature {
+            -webkit-width: calc( 20% - 30px );
+            width: calc( 20% - 3px);
+
+            flex-direction: column;
+
+            .temp-low,
+            .temp-high {
+                width: 100%;
+                padding: 20.2px 0;
+            }
+
+            .temp-low {
+                border: 3px solid $color-cool;
+                border-bottom: none;
+                border-left: none;
+            }
+
+            .temp-high {
+                border: 3px solid $color-hot;
+                border-top: none;
+                border-left: none;
+            }
+        }
+    }
+
+}
+
+@media( max-width: 1200px ) {
+
+    .weather-wrapper {
+        padding: 0;
+    }
+
+}
+
+@media( max-width: 767px ) {
+
+    .weather-conditions {
+        flex-direction: column;
+
+        .condition.overview,
+        .condition.details {
+            width: 100%;
+        }
+
+        .condition.overview {
+
+            .current.temp {
+                margin-top: -60px;
+            }
+
+            .current.condition {
+                padding-bottom: 60px;
+            }
+        }
+
+        .condition.details {
+            font-size: 14px;
+        }
+    }
+
+    .weather-forecast {
+
+        .forecast.heading {
+
+            .forecast.weekday {
+                font-size: 1.3em;
+                padding: 26px 0 0 40px;
+            }
+
+            .forecast.condition {
+                font-size: 1em;
+                padding: 0 0 0 40px;
+            }
+        }
+
+        .forecast.condition-icon {
+                padding: 0;
+        }
+
+        .temperature {
+
+            .temp-low,
+            .temp-high {
+                padding: 15.2px 0;
+            }
+        }
+    }
+
+}
+
+@media( max-width: 659px ) {
+
+    .container .section-title {
+        font-size: 1.5em;
+        padding: 0 0 10px 0;
+    }
+
+    .location-block .location.input form .location.search {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .weather-conditions {
+        border: 6px solid $color-dark-transparent;
+
+        .condition.overview {
+            border-right: none;
+
+            .current.condition-icon {
+                padding-top: 20px;
+
+                img {
+                    width: 30%;
+                    margin-top: 0;
+                }
+            }
+
+            .current.temp {
+                font-size: 36px;
+                margin-top: -20px;
+            }
+
+            .current.condition {
+                font-size: 22px;
+                padding-bottom: 35px;
+            }
+        }
+    }
+
+    .weather-forecast {
+        border: 6px solid $color-dark-transparent;
+
+        .forecast.heading {
+
+            .forecast.weekday {
+                font-size: 1.3em;
+                padding: 20px 0 0 20px;
+            }
+
+            .forecast.condition {
+                font-size: 1em;
+                padding: 0 0 0 20px;
+            }
+        }
+
+        .forecast.condition-icon img {
+            width: 80%;
+        }
+
+        .temperature {
+
+            .temp-low,
+            .temp-high {
+                padding: 13.1px 0;
+            }
+        }
+    }
+
+}
+
+@media( max-width: 439px ) {
+
+    .weather-conditions {
+        border: 6px solid $color-dark-transparent;
+
+        .condition.overview {
+            border-right: none;
+
+            .current.condition-icon {
+                padding-top: 20px;
+
+                img {
+                    width: 30%;
+                    margin-top: 0;
+                }
+            }
+
+            .current.temp {
+                font-size: 36px;
+                margin-top: -20px;
+            }
+
+            .current.condition {
+                font-size: 22px;
+                padding-bottom: 35px;
+            }
+        }
+    }
+
+    .weather-forecast {
+
+        .forecast.heading {
+
+            .forecast.weekday {
+                font-size: 1em;
+                padding: 16px 0 0 20px;
+            }
+
+            .forecast.condition {
+                font-size: 0.8em;
+                padding: 0 0 0 20px;
+            }
+        }
+
+        .temperature {
+
+            .temp-low,
+            .temp-high {
+                padding: 8px 0;
+            }
+        }
+    }
+
+}
