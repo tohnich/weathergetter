@@ -454,6 +454,7 @@ svg path {
       width: 80%; }
     .weather-forecast .temperature .temp-low,
     .weather-forecast .temperature .temp-high {
+      font-size: 0.9em;
       padding: 13.1px 0; }
 
   .weather-forecast:last-child {
@@ -483,6 +484,7 @@ svg path {
     padding: 0 0 0 20px; }
   .weather-forecast .temperature .temp-low,
   .weather-forecast .temperature .temp-high {
+    font-size: 0.7em;
     padding: 8px 0; } }
 
 /*# sourceMappingURL=global.css.map */
