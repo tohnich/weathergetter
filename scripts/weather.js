@@ -300,15 +300,15 @@ function displayConditionData( conditionData ) {
 
     // Display condition specifics data on HTML
     updated.innerHTML = conditionData["updated"];
-    low.innerHTML = conditionData["low"];
-    high.innerHTML = conditionData["high"];
-    windChill.innerHTML = conditionData["windChill"];
+    low.innerHTML = conditionData["low"] + '&deg;';
+    high.innerHTML = conditionData["high"] + '&deg;';
+    windChill.innerHTML = conditionData["windChill"] + '&deg;';
     windDirection.innerHTML = conditionData["windDirection"];
-    windSpeed.innerHTML = conditionData["windSpeed"];
-    humidity.innerHTML = conditionData["humidity"];
+    windSpeed.innerHTML = conditionData["windSpeed"] + ' mph';
+    humidity.innerHTML = conditionData["humidity"] + '%';
     heatIndex.innerHTML = conditionData["heatIndex"];
     pressure.innerHTML = conditionData["pressure"];
-    visibility.innerHTML = conditionData["visibility"];
+    visibility.innerHTML = conditionData["visibility"] + ' mi';
     sunrise.innerHTML = conditionData["sunrise"];
     sunset.innerHTML = conditionData["sunset"];
 
