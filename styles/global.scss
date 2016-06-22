@@ -130,6 +130,10 @@ svg path {
             .location.submit {
                 width: 20%;
                 background-color: $color-dark;
+                background-image: url('../images/search.svg');
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 15%;
                 color: $color-white;
                 border: none;
             }
@@ -446,7 +450,8 @@ svg path {
 
     .weather-forecast {
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+        border-bottom: none;
 
         flex-direction: row;
 
@@ -506,6 +511,10 @@ svg path {
                 border-left: none;
             }
         }
+    }
+
+    .weather-forecast:last-child {
+        border-bottom: 9px solid $color-dark;
     }
 
 }
@@ -615,6 +624,7 @@ svg path {
 
     .weather-forecast {
         border: 6px solid $color-dark-transparent;
+        border-bottom: none;
 
         .forecast.heading {
 
@@ -640,6 +650,10 @@ svg path {
                 padding: 13.1px 0;
             }
         }
+    }
+
+    .weather-forecast:last-child {
+        border-bottom: 6px solid $color-dark;
     }
 
 }
