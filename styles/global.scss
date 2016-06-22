@@ -461,6 +461,11 @@ svg path {
             border-right: none;
             border-left: none;
 
+            @include display-flex();
+
+            flex-direction: column;
+            justify-content: center;
+
             .forecast.weekday,
             .forecast.condition {
                 justify-content: flex-start;
@@ -469,7 +474,7 @@ svg path {
 
             .forecast.weekday {
                 font-size: 1.8em;
-                padding: 28px 0 0 40px;
+                padding: 0 0 0 40px;
             }
 
             .forecast.condition {
@@ -559,7 +564,7 @@ svg path {
 
             .forecast.weekday {
                 font-size: 1.3em;
-                padding: 26px 0 0 40px;
+                padding: 0 0 0 40px;
             }
 
             .forecast.condition {
@@ -630,7 +635,7 @@ svg path {
 
             .forecast.weekday {
                 font-size: 1.3em;
-                padding: 20px 0 0 20px;
+                padding: 0 0 0 20px;
             }
 
             .forecast.condition {
@@ -693,7 +698,7 @@ svg path {
 
             .forecast.weekday {
                 font-size: 1em;
-                padding: 16px 0 0 20px;
+                padding: 0 0 0 20px;
             }
 
             .forecast.condition {

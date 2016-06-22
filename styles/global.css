@@ -346,14 +346,21 @@ svg path {
       width: 60%;
       border: 3px solid #ecf0f1;
       border-right: none;
-      border-left: none; }
+      border-left: none;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
       .weather-forecast .forecast.heading .forecast.weekday,
       .weather-forecast .forecast.heading .forecast.condition {
         justify-content: flex-start;
         border: none; }
       .weather-forecast .forecast.heading .forecast.weekday {
         font-size: 1.8em;
-        padding: 28px 0 0 40px; }
+        padding: 0 0 0 40px; }
       .weather-forecast .forecast.heading .forecast.condition {
         font-size: 1.4em;
         padding: 0 0 0 40px; }
@@ -400,7 +407,7 @@ svg path {
 
   .weather-forecast .forecast.heading .forecast.weekday {
     font-size: 1.3em;
-    padding: 26px 0 0 40px; }
+    padding: 0 0 0 40px; }
   .weather-forecast .forecast.heading .forecast.condition {
     font-size: 1em;
     padding: 0 0 0 40px; }
@@ -439,7 +446,7 @@ svg path {
     border-bottom: none; }
     .weather-forecast .forecast.heading .forecast.weekday {
       font-size: 1.3em;
-      padding: 20px 0 0 20px; }
+      padding: 0 0 0 20px; }
     .weather-forecast .forecast.heading .forecast.condition {
       font-size: 1em;
       padding: 0 0 0 20px; }
@@ -470,7 +477,7 @@ svg path {
 
   .weather-forecast .forecast.heading .forecast.weekday {
     font-size: 1em;
-    padding: 16px 0 0 20px; }
+    padding: 0 0 0 20px; }
   .weather-forecast .forecast.heading .forecast.condition {
     font-size: 0.8em;
     padding: 0 0 0 20px; }
