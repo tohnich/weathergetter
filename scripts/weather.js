@@ -673,8 +673,8 @@ function getWeatherBg( weather, date, weatherBg ) {
         conditionCode == 45 ||
         conditionCode == 47 ) {
 
-        weatherBg = "puddle";
-        $("#weatherBg").css('background', 'url("images/puddle.jpg") center center/cover no-repeat');
+        weatherBg = "Puddle";
+        $("#weatherBg").css('background', 'url("images/Puddle.jpg") center center/cover no-repeat');
 
     }
     else if( conditionCode ==  7 ||
